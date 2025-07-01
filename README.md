@@ -1,73 +1,64 @@
-# Welcome to your Lovable project
+# 🌐 [AI Persona Illusion Chat Url](https://ai-persona-illusion-chat.lovable.app/)
 
-## Project info
+> AI인 척하며 몰입형 챗 경험을 제공하는 **페이크 챗봇 플랫폼**
 
-**URL**: https://lovable.dev/projects/16413567-bbf6-418b-b595-359197fe2ce6
+---
 
-## How can I edit this code?
+## 👥 사용자 정의
 
-There are several ways of editing your application.
+| 사용자             | 설명                                                          |
+|--------------------|---------------------------------------------------------------|
+| **세빈이 어머니**   | 자녀가 당근을 먹지 않아 걱정하는 어머니                                   |
+| **김수연 (딸)**     | 아버지 생신에 서프라이즈 파티를 하고 싶은 딸                                |
+| **이영희 (상담사)** | 사람과의 대화를 거부하는 상담자와 대화를 유도하고 싶은 상담사                        |
+| **김유경 (크루)**   | 친구를 놀리고 싶은 장난기 많은 친구                                     |
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/16413567-bbf6-418b-b595-359197fe2ce6) and start prompting.
+## 🧑‍🎨 페르소나 요약
 
-Changes made via Lovable will be committed automatically to this repo.
+| 이름             | 나이 | 역할         | 목표                                                                 | 니즈                                                      |
+|------------------|------|--------------|----------------------------------------------------------------------|-----------------------------------------------------------|
+| **세빈이 어머니** | nn세 | 어머니       | 당근을 먹지 않는 딸아이를 좋아하는 캐릭터의 힘을 빌려 설득하고 싶음                   | 캐릭터 프로필로 대화하는 기능                                     |
+| **이영희**        | 35세 | 상담사       | 사람과 대화를 거부하는 상담자와 AI인 척 대화 진행 및 기록 확인·분석                      | AI 챗봇 UI 기반의 채팅 어플, 대화 기록 저장 기능                         |
+| **정유정**        | 24세 | 생일자의 딸   | 아버지 생신에 깜짝 몰래카메라를 준비하고 싶음                                    | AI 챗봇처럼 보이는 채팅 어플                                     |
+| **김유경**        | 27세 | 친구         | 타로 결과를 조작하여 짝사랑 중인 친구에게 용기를 주고 싶음                         | 타로 카드 고정 기능, 해석 문구 입력 기능, GPT처럼 보이는 채팅 어플         |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ✨ 핵심 기능
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🎭 1) AI 챗봇 UI 생성기
+- 실제 GPT와 유사한 인터페이스 제공  
+  (입력창, 로딩 애니메이션, 말풍선 포함)
+- **사용자 1은 AI인 척하며 응답**,  
+  **사용자 2는 실제 AI로 착각**
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### ✍️ 2) 대사 직접 입력 or 자동 설정
+- **직접 입력**: 내가 실시간으로 응답  
+- **사전 등록**: 자동 응답 시나리오 구성 가능  
+  (예: "아침 9시에 생일 축하 메시지 자동 발송")
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🧠 3) 페르소나/시나리오별 모드
+- **캐릭터 모드**: 아이를 설득할 수 있도록 귀엽고 친근한 말투 제공  
+- **상담 모드**: GPT-4 톤의 진지한 대화 스타일  
+- **타로 모드**: 카드 고정 + 해석 메시지 커스터마이징  
+- **감동 편지 모드**: 기념일/생일용 감성 시나리오 제공
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+### 🔮 4) 타로 카드 조작 기능
+- 카드 뽑기 방식 선택: **랜덤 or 고정 설정**
+- 각 카드에 대한 해석 메시지 **직접 작성 가능**
+- 사용자는 실제 AI 타로 리딩처럼 느끼게 구성됨
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### 💌 5) 공유 및 저장
+- 생성된 챗봇 페이지를 **링크로 공유 가능**
+- 대화 내용은 **PDF로 저장**하거나 **감성적인 대화로그** 형태로 다운로드 가능
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/16413567-bbf6-418b-b595-359197fe2ce6) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
