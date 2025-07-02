@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { UserCheck, MessageSquare, BarChart3, Share2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface ProfessionalCounselorModeProps {
   onStartSession: () => void;
@@ -11,6 +12,13 @@ interface ProfessionalCounselorModeProps {
 }
 
 const ProfessionalCounselorMode = ({ onStartSession, onViewAnalytics, onShareLink }: ProfessionalCounselorModeProps) => {
+  const navigate = useNavigate();
+
+  const handleStartSession = () => {
+    const sessionId = Date.now().toString();
+    navigate(`/counselor/${sessionId}`);
+  };
+
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
@@ -40,12 +48,12 @@ const ProfessionalCounselorMode = ({ onStartSession, onViewAnalytics, onShareLin
           </CardHeader>
           <CardContent>
             <ul className="text-sm text-white/80 space-y-2 mb-4">
-              <li>• 심리적 안정감을 주는 AI 응답</li>
-              <li>• 수동/자동 모드 전환 가능</li>
+              <li>• 상담사가 직접 AI 역할 수행</li>
+              <li>• 내담자용 별도 링크 제공</li>
               <li>• 실시간 대화 기록 저장</li>
             </ul>
             <Button 
-              onClick={onStartSession}
+              onClick={handleStartSession}
               className="w-full bg-blue-500 hover:bg-blue-600 text-white"
             >
               세션 시작하기
