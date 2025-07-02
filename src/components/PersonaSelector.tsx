@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, MessageCircle, Star, Sparkles, ArrowRight, UserCheck } from 'lucide-react';
+import { Heart, MessageCircle, Star, ArrowRight, UserCheck } from 'lucide-react';
 
 interface PersonaSelectorProps {
   onPersonaSelect: (persona: string) => void;
@@ -57,18 +56,6 @@ const PersonaSelector = ({ onPersonaSelect }: PersonaSelectorProps) => {
         '카드들이 당신에게 말하고 있습니다...',
         '오늘의 운세를 점쳐드리겠습니다.',
         '별들이 보여주는 당신의 미래는...'
-      ]
-    },
-    {
-      id: 'letter',
-      title: '편지 모드',
-      description: '감동적인 기념일 메시지 AI',
-      icon: Sparkles,
-      color: 'bg-yellow-500',
-      examples: [
-        '소중한 당신에게 전하는 마음...',
-        '이 특별한 날을 축하합니다.',
-        '함께한 시간들이 얼마나 소중한지...'
       ]
     }
   ];

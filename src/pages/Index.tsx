@@ -102,7 +102,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 transition-all duration-300 hover:scale-105">
               <CardHeader>
                 <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
@@ -150,23 +150,6 @@ const Index = () => {
               <CardContent>
                 <p className="text-sm text-white/80">
                   카드 조작으로 원하는 결과 연출
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 transition-all duration-300 hover:scale-105">
-              <CardHeader>
-                <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mb-4">
-                  <Sparkles className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>편지 모드</CardTitle>
-                <CardDescription className="text-white/70">
-                  감동적인 기념일 메시지
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-white/80">
-                  생일, 기념일 맞춤 편지 작성
                 </p>
               </CardContent>
             </Card>
