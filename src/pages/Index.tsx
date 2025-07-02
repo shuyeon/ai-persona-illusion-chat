@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -85,15 +84,6 @@ const Index = () => {
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 챗봇 만들기 시작
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-purple-600 text-lg px-8 py-4 rounded-full"
-              >
-                <Share2 className="w-5 h-5 mr-2" />
-                예시 보기
               </Button>
             </div>
           </div>
