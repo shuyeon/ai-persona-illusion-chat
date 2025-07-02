@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -48,11 +47,11 @@ const ChatInterface = ({ persona, onBack }: ChatInterfaceProps) => {
       color: 'bg-purple-500',
       icon: '🔮'
     },
-    letter: {
-      name: '편지 작가',
-      greeting: '소중한 당신에게... 특별한 하루를 맞이하여 마음을 담은 편지를 써드리겠습니다. 💌',
-      color: 'bg-yellow-500',
-      icon: '💌'
+    professional: {
+      name: '심리 상담 AI',
+      greeting: '안녕하세요. 편안하게 대화해 보세요. 언제든지 말하고 싶은 것이 있으면 자유롭게 말씀해 주세요.',
+      color: 'bg-teal-500',
+      icon: '💙'
     }
   };
 
@@ -113,8 +112,8 @@ const ChatInterface = ({ persona, onBack }: ChatInterfaceProps) => {
         response = getCounselorResponse(userMessage);
       } else if (persona === 'tarot') {
         response = getTarotResponse(userMessage);
-      } else if (persona === 'letter') {
-        response = getLetterResponse(userMessage);
+      } else if (persona === 'professional') {
+        response = getProfessionalResponse(userMessage);
       }
 
       const aiMessage: Message = {
@@ -162,13 +161,13 @@ const ChatInterface = ({ persona, onBack }: ChatInterfaceProps) => {
     return responses[Math.floor(Math.random() * responses.length)];
   };
 
-  const getLetterResponse = (message: string) => {
+  const getProfessionalResponse = (message: string) => {
     const responses = [
-      '소중한 당신에게... 이 마음을 어떻게 표현해야 할까요. 특별한 날을 축하합니다 💌',
-      '함께한 시간들이 얼마나 소중한지 말로 다 표현할 수 없어요... 감사합니다 🌸',
-      '당신이 있어서 매일이 선물 같습니다. 오늘도 행복한 하루 보내세요 💝',
-      '마음을 담아 전하는 편지... 당신의 미소가 세상을 밝게 만들어요 ✨',
-      '특별한 당신에게 전하는 감사의 마음... 항상 응원하고 있습니다 🌹'
+      '말씀해 주셔서 고맙습니다. 그런 기분이 드는 것은 충분히 이해할 수 있어요.',
+      '천천히 말씀해 주세요. 어떤 것이든 괜찮습니다.',
+      '지금 느끼고 계신 감정이 어떤 것인지 더 자세히 들려주실 수 있나요?',
+      '힘든 시간을 보내고 계시는군요. 언제든 편안하게 이야기해 주세요.',
+      '당신의 생각과 감정은 모두 소중합니다. 더 말씀해 주시겠어요?'
     ];
     return responses[Math.floor(Math.random() * responses.length)];
   };

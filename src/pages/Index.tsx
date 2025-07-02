@@ -5,12 +5,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MessageCircle, Sparkles, Heart, Star, Share2 } from 'lucide-react';
 import ChatInterface from '@/components/ChatInterface';
 import PersonaSelector from '@/components/PersonaSelector';
+import ProfessionalCounselorMode from '@/components/ProfessionalCounselorMode';
 import TarotCards from '@/components/TarotCards';
 
 const Index = () => {
   const [selectedPersona, setSelectedPersona] = useState<string | null>(null);
   const [isCreating, setIsCreating] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  const [showProfessionalMode, setShowProfessionalMode] = useState(false);
 
   const startCreating = () => {
     setIsCreating(true);
@@ -18,7 +20,28 @@ const Index = () => {
 
   const handlePersonaSelect = (persona: string) => {
     setSelectedPersona(persona);
+    if (persona === 'professional') {
+      setShowProfessionalMode(true);
+    } else {
+      setShowChat(true);
+    }
+  };
+
+  const handleStartSession = () => {
+    setShowProfessionalMode(false);
     setShowChat(true);
+    setSelectedPersona('professional');
+  };
+
+  const handleViewAnalytics = () => {
+    // 분석 화면 로직 (추후 구현)
+    console.log('분석 화면 열기');
+  };
+
+  const handleShareLink = () => {
+    const clientUrl = `${window.location.origin}/client/professional`;
+    navigator.clipboard.writeText(clientUrl);
+    alert('내담자용 링크가 클립보드에 복사되었습니다!');
   };
 
   if (showChat && selectedPersona) {
@@ -27,9 +50,41 @@ const Index = () => {
         persona={selectedPersona}
         onBack={() => {
           setShowChat(false);
-          setSelectedPersona(null);
+          if (selectedPersona === 'professional') {
+            setShowProfessionalMode(true);
+          } else {
+            setSelectedPersona(null);
+          }
         }}
       />
+    );
+  }
+
+  if (showProfessionalMode) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-300 to-purple-600 p-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h1 className="text-3xl font-bold text-white">AI 챗봇 생성기</h1>
+            <Button 
+              variant="secondary" 
+              onClick={() => {
+                setShowProfessionalMode(false);
+                setSelectedPersona(null);
+              }}
+              className="bg-white/20 text-white hover:bg-white/30"
+            >
+              뒤로가기
+            </Button>
+          </div>
+          
+          <ProfessionalCounselorMode 
+            onStartSession={handleStartSession}
+            onViewAnalytics={handleViewAnalytics}
+            onShareLink={handleShareLink}
+          />
+        </div>
+      </div>
     );
   }
 
@@ -54,6 +109,7 @@ const Index = () => {
     );
   }
 
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-300 to-purple-600">
       {/* Hero Section */}
