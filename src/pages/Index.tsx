@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MessageCircle, Sparkles, Heart, Star, Share2 } from 'lucide-react';
-import ChatInterface from '@/components/ChatInterface';
-import PersonaSelector from '@/components/PersonaSelector';
-import ProfessionalCounselorMode from '@/components/ProfessionalCounselorMode';
-import TarotCards from '@/components/TarotCards';
+import { MessageCircle, Sparkles, Heart, Star, Share2 } from "lucide-react";
+import ChatInterface from "@/components/ChatInterface";
+import PersonaSelector from "@/components/PersonaSelector";
+import ProfessionalCounselorMode from "@/components/ProfessionalCounselorMode";
+import TarotCards from "@/components/TarotCards";
 
 const Index = () => {
   const [selectedPersona, setSelectedPersona] = useState<string | null>(null);
@@ -20,7 +26,7 @@ const Index = () => {
 
   const handlePersonaSelect = (persona: string) => {
     setSelectedPersona(persona);
-    if (persona === 'professional') {
+    if (persona === "professional") {
       setShowProfessionalMode(true);
     } else {
       setShowChat(true);
@@ -30,27 +36,27 @@ const Index = () => {
   const handleStartSession = () => {
     setShowProfessionalMode(false);
     setShowChat(true);
-    setSelectedPersona('professional');
+    setSelectedPersona("professional");
   };
 
   const handleViewAnalytics = () => {
     // 분석 화면 로직 (추후 구현)
-    console.log('분석 화면 열기');
+    console.log("분석 화면 열기");
   };
 
   const handleShareLink = () => {
     const clientUrl = `${window.location.origin}/client/professional`;
     navigator.clipboard.writeText(clientUrl);
-    alert('내담자용 링크가 클립보드에 복사되었습니다!');
+    alert("내담자용 링크가 클립보드에 복사되었습니다!");
   };
 
   if (showChat && selectedPersona) {
     return (
-      <ChatInterface 
+      <ChatInterface
         persona={selectedPersona}
         onBack={() => {
           setShowChat(false);
-          if (selectedPersona === 'professional') {
+          if (selectedPersona === "professional") {
             setShowProfessionalMode(true);
           } else {
             setSelectedPersona(null);
@@ -66,8 +72,8 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-3xl font-bold text-white">AI 챗봇 생성기</h1>
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               onClick={() => {
                 setShowProfessionalMode(false);
                 setSelectedPersona(null);
@@ -77,8 +83,8 @@ const Index = () => {
               뒤로가기
             </Button>
           </div>
-          
-          <ProfessionalCounselorMode 
+
+          <ProfessionalCounselorMode
             onStartSession={handleStartSession}
             onViewAnalytics={handleViewAnalytics}
             onShareLink={handleShareLink}
@@ -94,22 +100,21 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-3xl font-bold text-white">AI 챗봇 생성기</h1>
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               onClick={() => setIsCreating(false)}
               className="bg-white/20 text-white hover:bg-white/30"
             >
               뒤로가기
             </Button>
           </div>
-          
+
           <PersonaSelector onPersonaSelect={handlePersonaSelect} />
         </div>
       </div>
     );
   }
 
-  
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-300 to-purple-600">
       {/* Hero Section */}
@@ -122,24 +127,25 @@ const Index = () => {
                 <Sparkles className="w-8 h-8 text-yellow-300 absolute -top-2 -right-2 animate-pulse" />
               </div>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               AI 챗봇 <span className="text-yellow-300">장난치기</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              친구들을 속이는 가짜 AI 챗봇을 만들어보세요! 
-              <br />실제 GPT처럼 보이는 완벽한 채팅 인터페이스
+              친구들을 속이는 가짜 AI 챗봇을 만들어보세요!
+              <br />
+              실제 GPT처럼 보이는 완벽한 채팅 인터페이스
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={startCreating}
                 className="bg-white text-purple-600 hover:bg-white/90 text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                챗봇 만들기 시작
+                챗봇 모드 선택
               </Button>
             </div>
           </div>
@@ -227,7 +233,9 @@ const Index = () => {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">페르소나 선택</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">
+                페르소나 선택
+              </h3>
               <p className="text-white/80">
                 원하는 AI 캐릭터를 선택하고 설정을 커스터마이징하세요
               </p>
@@ -237,7 +245,9 @@ const Index = () => {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">대화 시작</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">
+                대화 시작
+              </h3>
               <p className="text-white/80">
                 실시간으로 AI인 척 대답하거나 사전 설정된 응답을 사용하세요
               </p>
@@ -247,7 +257,9 @@ const Index = () => {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">공유하기</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">
+                공유하기
+              </h3>
               <p className="text-white/80">
                 생성된 챗봇 링크를 친구들에게 공유하고 반응을 확인하세요
               </p>
